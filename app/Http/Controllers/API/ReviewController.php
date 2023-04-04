@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Storage;
 use Str;
 use Validator;
 
@@ -21,9 +22,11 @@ class ReviewController extends Controller
 
         $date = date_format(now(), "Y/m");
         $path = "avatars/$date/" . Str::random() . '.jpg';
+        ini_set('memory_limit', '512M');
         $image = Image::make($request->file('avatar')->getRealPath());
         $image->fit(220, 220);
-        $image->save(public_path($path), 70);
+        $image = $image->stream('jpg', 70);
+        Storage::put($path, $image);
 
         Review::query()->create([
             'name' => $request->get('name'),
@@ -38,6 +41,6 @@ class ReviewController extends Controller
 
     public function getReviews()
     {
-        return Review::query()->orderBy('created_at', 'desc')->limit(10)->get();
+        return Review::query()->orderBy('created_at', 'desc')->limit(20)->get();
     }
 }

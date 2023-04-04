@@ -17,8 +17,7 @@
         </div>
         <div class="form-input-file">
             <label for="image">Аватар <span class="required">*</span></label>
-            <input id="image" type="file" accept="image/*" name="image">
-{{--            <img id="img" src="">--}}
+            <input id="image" type="file" capture="user" accept="image/*" name="image">
         </div>
         <button type="submit" class="btn btn-add"><i class="fa fa-check"></i> Отправить</button>
         <button type="submit" class="btn btn-cancel"><i class="fa fa-close"></i> Отмена</button>

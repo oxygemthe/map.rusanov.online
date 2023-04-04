@@ -13,7 +13,6 @@ services:
         working_dir: /var/www
         volumes:
             - ./:/var/www
-#            - ./docker/php.ini:/usr/local/etc/php/php.ini
         networks:
             - traffic
     db:
@@ -34,11 +33,15 @@ services:
         image: nginx:alpine
         container_name: maprusanovonline-nginx
         restart: unless-stopped
+        build:
+            context: .
+            dockerfile:
+                docker/nginx.Dockerfile
         ports:
             - "80:80"
         volumes:
             - ./:/var/www
-            - ./nginx:/etc/nginx/conf.d/
+            - ./logs:/var/log/nginx
         environment:
             - NGINX_HOST=local.map.rusanov.online
             - NGINX_PORT=80

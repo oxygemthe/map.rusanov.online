@@ -1,9 +1,8 @@
 import Swal from "sweetalert2";
-import Cropper from "cropperjs";
 import "cropperjs/dist/cropper.css";
 import {Ball, canvas} from "./bounce";
 
-let cropper = null;
+// let cropper = null;
 
 // document.body.querySelector('#image').addEventListener('change', () => {
 //     const formImage = document.body.querySelector('#image');
@@ -30,6 +29,7 @@ document.querySelector("form").addEventListener('submit', (e) => {
     const name = document.body.querySelector('#name');
     const text = document.body.querySelector('#review');
     const image = document.body.querySelector('#image');
+    const oldText = document.querySelector('form .btn-add').innerText;
 
     if (!(name.value != null && name.value.length >= 2)) {
         name.classList.add('error');
@@ -47,44 +47,13 @@ document.querySelector("form").addEventListener('submit', (e) => {
     }
     image.closest('.form-input-file').classList.remove('error');
 
-    // cropper.getCroppedCanvas().toBlob((blob) => {
-    //     const body = new FormData();
-    //     body.append('name', name.value);
-    //     body.append('text', text.value);
-    //     body.append('avatar', blob == null ? image.files[0] : blob);
-    //
-    //     document.querySelector('form .btn-add').disabled = true;
-    //     fetch(e.target.action, {
-    //         method: "POST",
-    //         headers: {
-    //             "Accept": "application/json",
-    //         },
-    //         body: body,
-    //     }).then(async response => {
-    //         if (!response.ok) {
-    //             Swal.fire("Ошибка", "Во время запроса произошла ошибка сервера.", "error");
-    //             throw new Error(`Ошибка при выполнении запроса: ${response.statusText}`)
-    //         } else {
-    //             const result = await response.json();
-    //             Swal.fire(result.title, result.message, "success");
-    //         }
-    //     }).catch(error => {
-    //         Swal.showValidationMessage(error)
-    //     }).finally(() => {
-    //         cropper.destroy();
-    //         document.querySelector('form .btn-add').disabled = false;
-    //         name.value = null;
-    //         text.value = null;
-    //         document.querySelector('#img').src = null;
-    //         setClassHidden();
-    //     });
-    // });
     const body = new FormData();
     body.append('name', name.value);
     body.append('text', text.value);
     body.append('avatar', image.files[0]);
 
     document.querySelector('form .btn-add').disabled = true;
+    document.querySelector('form .btn-add').innerText = "Обработка...";
     fetch(e.target.action, {
         method: "POST",
         headers: {
@@ -93,20 +62,21 @@ document.querySelector("form").addEventListener('submit', (e) => {
         body: body,
     }).then(async response => {
         if (!response.ok) {
-            Swal.fire("Ошибка", "Во время запроса произошла ошибка сервера.", "error");
+            await Swal.fire("Ошибка", "Во время запроса произошла ошибка сервера.", "error");
             throw new Error(`Ошибка при выполнении запроса: ${response.statusText}`)
         } else {
             const result = await response.json();
-            Swal.fire(result.title, result.message, "success");
+            await Swal.fire(result.title, result.message, "success");
         }
     }).catch(error => {
         Swal.showValidationMessage(error)
     }).finally(() => {
         // cropper.destroy();
         document.querySelector('form .btn-add').disabled = false;
+        document.querySelector('form .btn-add').innerText = oldText;
         name.value = null;
         text.value = null;
-        document.querySelector('#img').src = null;
+        // document.querySelector('#img').src = null;
         setClassHidden();
     });
 });
@@ -123,6 +93,8 @@ const getReviews = (append) => {
         .then(response => {
             let maxWidth = 300;
             let maxHeight = 300;
+            let a = 2;
+            let b = 8;
             response.forEach(review => {
                 if (!reviewsId.has(review.id)) {
                     let date = new Date(Date.parse(review.created_at));
@@ -139,8 +111,10 @@ const getReviews = (append) => {
                         '</div>' +
                         '</div>';
                     append ? document.querySelector('.reviews').append(el) : document.querySelector('.reviews').prepend(el);
-                    Ball.create(review.avatar, review.name, getRandomInt(2, 5), getRandomInt(2, 5))
-                        .draw(getRandomInt(0, maxWidth + getRandomInt(2, 10)), getRandomInt(0, maxHeight + getRandomInt(8, 15)));
+                    Ball.create(review.avatar, review.name, getRandomInt(1, 4), getRandomInt(2, 3))
+                        .draw(getRandomInt(0, maxWidth + getRandomInt(a, 10)), getRandomInt(0, maxHeight + getRandomInt(b, 15)));
+                    a++;
+                    b++;
                 }
             });
         });

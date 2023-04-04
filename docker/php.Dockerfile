@@ -43,6 +43,8 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
+ADD docker/php.ini /usr/local/etc/php/conf.d/custom.ini
+
 WORKDIR /var/www
 
 USER $user
