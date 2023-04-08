@@ -22,7 +22,7 @@ class ReviewController extends Controller
 
         $date = date_format(now(), "Y/m");
         $path = "avatars/$date/" . Str::random() . '.jpg';
-        ini_set('memory_limit', '512M');
+        ini_set('memory_limit', '1024M');
         $image = Image::make($request->file('avatar')->getRealPath());
         $image->fit(220, 220);
         $image = $image->stream('jpg', 70);
