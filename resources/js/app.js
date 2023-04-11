@@ -116,6 +116,11 @@ const getReviews = (append) => {
                     a++;
                     b++;
                 }
+                if (document.querySelector('.reviews').childElementCount > 20) {
+                    while (document.querySelector('.reviews').childElementCount > 20) {
+                        document.querySelector('.reviews').lastChild.remove();
+                    }
+                }
             });
         });
 };
