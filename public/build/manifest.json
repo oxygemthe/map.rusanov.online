@@ -1,0 +1,123 @@
+{
+  "resources/fonts/Nunito-Black.ttf": {
+    "file": "assets/Nunito-Black-d4c55f22.ttf",
+    "src": "resources/fonts/Nunito-Black.ttf"
+  },
+  "resources/fonts/Nunito-BlackItalic.ttf": {
+    "file": "assets/Nunito-BlackItalic-93db023e.ttf",
+    "src": "resources/fonts/Nunito-BlackItalic.ttf"
+  },
+  "resources/fonts/Nunito-Bold.ttf": {
+    "file": "assets/Nunito-Bold-34f790c2.ttf",
+    "src": "resources/fonts/Nunito-Bold.ttf"
+  },
+  "resources/fonts/Nunito-BoldItalic.ttf": {
+    "file": "assets/Nunito-BoldItalic-cae9375d.ttf",
+    "src": "resources/fonts/Nunito-BoldItalic.ttf"
+  },
+  "resources/fonts/Nunito-ExtraBold.ttf": {
+    "file": "assets/Nunito-ExtraBold-d215a4a3.ttf",
+    "src": "resources/fonts/Nunito-ExtraBold.ttf"
+  },
+  "resources/fonts/Nunito-ExtraBoldItalic.ttf": {
+    "file": "assets/Nunito-ExtraBoldItalic-11d85304.ttf",
+    "src": "resources/fonts/Nunito-ExtraBoldItalic.ttf"
+  },
+  "resources/fonts/Nunito-ExtraLight.ttf": {
+    "file": "assets/Nunito-ExtraLight-2e8f1247.ttf",
+    "src": "resources/fonts/Nunito-ExtraLight.ttf"
+  },
+  "resources/fonts/Nunito-ExtraLightItalic.ttf": {
+    "file": "assets/Nunito-ExtraLightItalic-d95974eb.ttf",
+    "src": "resources/fonts/Nunito-ExtraLightItalic.ttf"
+  },
+  "resources/fonts/Nunito-Italic.ttf": {
+    "file": "assets/Nunito-Italic-6b4d3792.ttf",
+    "src": "resources/fonts/Nunito-Italic.ttf"
+  },
+  "resources/fonts/Nunito-Light.ttf": {
+    "file": "assets/Nunito-Light-82af11c7.ttf",
+    "src": "resources/fonts/Nunito-Light.ttf"
+  },
+  "resources/fonts/Nunito-LightItalic.ttf": {
+    "file": "assets/Nunito-LightItalic-bd4aa4ef.ttf",
+    "src": "resources/fonts/Nunito-LightItalic.ttf"
+  },
+  "resources/fonts/Nunito-Medium.ttf": {
+    "file": "assets/Nunito-Medium-56a28554.ttf",
+    "src": "resources/fonts/Nunito-Medium.ttf"
+  },
+  "resources/fonts/Nunito-MediumItalic.ttf": {
+    "file": "assets/Nunito-MediumItalic-53dac201.ttf",
+    "src": "resources/fonts/Nunito-MediumItalic.ttf"
+  },
+  "resources/fonts/Nunito-Regular.ttf": {
+    "file": "assets/Nunito-Regular-a278cc18.ttf",
+    "src": "resources/fonts/Nunito-Regular.ttf"
+  },
+  "resources/fonts/Nunito-SemiBold.ttf": {
+    "file": "assets/Nunito-SemiBold-28d37096.ttf",
+    "src": "resources/fonts/Nunito-SemiBold.ttf"
+  },
+  "resources/fonts/Nunito-SemiBoldItalic.ttf": {
+    "file": "assets/Nunito-SemiBoldItalic-14a22f9e.ttf",
+    "src": "resources/fonts/Nunito-SemiBoldItalic.ttf"
+  },
+  "resources/icons/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-2ef6fdde.ttf",
+    "src": "resources/icons/webfonts/fa-brands-400.ttf"
+  },
+  "resources/icons/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-f4617423.woff2",
+    "src": "resources/icons/webfonts/fa-brands-400.woff2"
+  },
+  "resources/icons/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-12dea17b.ttf",
+    "src": "resources/icons/webfonts/fa-regular-400.ttf"
+  },
+  "resources/icons/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-7ba24c41.woff2",
+    "src": "resources/icons/webfonts/fa-regular-400.woff2"
+  },
+  "resources/icons/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-67a880b4.ttf",
+    "src": "resources/icons/webfonts/fa-solid-900.ttf"
+  },
+  "resources/icons/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-e2c5cf54.woff2",
+    "src": "resources/icons/webfonts/fa-solid-900.woff2"
+  },
+  "resources/icons/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-8d9500e8.ttf",
+    "src": "resources/icons/webfonts/fa-v4compatibility.ttf"
+  },
+  "resources/icons/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-7c377405.woff2",
+    "src": "resources/icons/webfonts/fa-v4compatibility.woff2"
+  },
+  "resources/img/map-res.png": {
+    "file": "assets/map-res-3ffd0ccd.png",
+    "src": "resources/img/map-res.png"
+  },
+  "resources/img/map.png": {
+    "file": "assets/map-0766067c.png",
+    "src": "resources/img/map.png"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-12821c7b.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "css": [
+      "assets/app-12821c7b.css"
+    ],
+    "file": "assets/app-e8fa9ce5.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/less/app.less": {
+    "file": "assets/app-71f6e2ef.css",
+    "isEntry": true,
+    "src": "resources/less/app.less"
+  }
+}
